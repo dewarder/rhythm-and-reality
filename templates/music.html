@@ -1,16 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Music - Rhythm & Reality</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <title>Music - Rhythm & Reality</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-  <h1>Freestyles & Episodes</h1>
-  <p>Coming soon: embedded audio, video, and live sessions.</p>
-  <nav>
-    <a href="/">Home</a> |
-    <a href="/about">About</a> |
-    <a href="/music">Music</a>
-  </nav>
+  <h1>Freestyles & Episodes</h1>
+  <p>Listen to featured tracks, freestyles, and episodes from Rhythm & Reality.</p>
+
+  <!-- 🎧 Spotify Embed -->
+  <h2 style="color: gold;">Spotify</h2>
+  <iframe style="border-radius:12px" 
+    src="https://open.spotify.com/embed/playlist/37i9dQZF1DXcBWIGoYBM5M?utm_source=generator"
+    width="100%" height="380" frameborder="0" allowfullscreen=""
+    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+    loading="lazy">
+  </iframe>
+
+  <!-- 🔊 SoundCloud Embed -->
+  <h2 style="color: gold;">SoundCloud</h2>
+  <iframe width="100%" height="166" 
+    scrolling="no" frameborder="no" 
+    allow="autoplay" 
+    src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/123456789&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true">
+  </iframe>
+
+  <!-- 🎵 MP3 Upload -->
+  <h2 style="color: gold;">Direct MP3 Upload</h2>
+  <audio controls>
+    <source src="{{ url_for('static', filename='audio/sample.mp3') }}" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <nav style="margin-top: 40px;">
+    <a href="/">Home</a> |
+    <a href="/about">About</a> |
+    <a href="/music">Music</a>
+  </nav>
 </body>
 </html>
