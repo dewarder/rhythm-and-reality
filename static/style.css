@@ -1,0 +1,36 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  color: #fff;
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-top: 80px;
+  color: gold;
+}
+
+p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  color: #ccc;
+}
+
+nav {
+  margin-top: 40px;
+}
+
+nav a {
+  color: gold;
+  font-size: 1.1rem;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
