@@ -5,7 +5,10 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-  <body>
+  <header>
+    <img src="{{ url_for('static', filename='logo.png') }}" alt="Rhythm & Reality Logo" class="logo">
+  </header>
+
   <h1>Welcome to Rhythm & Reality 🎤</h1>
   <p>The livest podcast meets music, freestyles, and interviews.</p>
 
@@ -15,3 +18,4 @@
     <a href="/music">Music</a>
   </nav>
 </body>
+</html>
