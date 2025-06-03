@@ -1,36 +1,103 @@
 body {
   margin: 0;
-  padding: 0;
-  background-color: #000;
+  font-family: Arial, sans-serif;
+  background: #000;
   color: #fff;
-  font-family: 'Arial', sans-serif;
-  text-align: center;
 }
 
-h1 {
-  font-size: 2.5rem;
-  margin-top: 80px;
+/* 🔲 Navbar */
+.navbar {
+  background: #111;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 25px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  height: 50px;
+  max-width: 100%;
+}
+
+.navbar nav a {
   color: gold;
-}
-
-p {
-  font-size: 1.2rem;
-  margin-top: 10px;
-  color: #ccc;
-}
-
-nav {
-  margin-top: 40px;
-}
-
-nav a {
-  color: gold;
-  font-size: 1.1rem;
+  margin-left: 20px;
+  font-size: 1.6rem;
   text-decoration: none;
-  margin: 0 15px;
+}
+
+/* 🎧 Hero Section */
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 40px;
+  background: #222;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hero-text {
+  flex: 1;
+  padding-right: 20px;
+}
+
+.hero-media {
+  flex: 1;
+  max-width: 480px;
+}
+
+.btn {
+  display: inline-block;
+  background: gold;
+  color: black;
+  padding: 10px 20px;
+  margin-top: 20px;
+  text-decoration: none;
   font-weight: bold;
 }
 
-nav a:hover {
-  text-decoration: underline;
+/* 🧱 Grid */
+.content-grid {
+  padding: 40px;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card {
+  background: #111;
+  padding: 15px;
+  width: 200px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 4px;
+}
+
+/* 📱 Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #888;
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+  }
+
+  .navbar nav a {
+    font-size: 1.3rem;
+    margin-left: 10px;
+  }
 }

@@ -1,21 +1,55 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Rhythm & Reality</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <title>Rhythm & Reality</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-  <header>
-    <img src="{{ url_for('static', filename='logo.png') }}" alt="Rhythm & Reality Logo" class="logo">
-  </header>
 
-  <h1>Welcome to Rhythm & Reality 🎤</h1>
-  <p>The livest podcast meets music, freestyles, and interviews.</p>
+  <!-- 🔲 Top Navigation -->
+  <header class="navbar">
+    <img src="{{ url_for('static', filename='logo.png') }}" class="logo" alt="Rhythm & Reality">
+    <nav>
+      <a href="/"><span>🏠</span></a>
+      <a href="/music"><span>🎵</span></a>
+      <a href="/about"><span>🧠</span></a>
+      <a href="/contact"><span>📩</span></a>
+    </nav>
+  </header>
 
-  <nav>
-    <a href="/">Home</a>
-    <a href="/about">About</a>
-    <a href="/music">Music</a>
-  </nav>
+  <!-- 🎧 Hero Section -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>🔥 Latest Episode</h1>
+      <p>Real stories. Real bars. No filters.</p>
+      <a href="/music" class="btn">Listen Now</a>
+    </div>
+    <div class="hero-media">
+      <iframe style="width:100%; height:300px;" src="https://open.spotify.com/embed/episode/placeholder" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <!-- 🧱 Freestyle Grid -->
+  <section class="content-grid">
+    <h2>🎙 Latest Freestyles</h2>
+    <div class="grid">
+      <!-- Example Card -->
+      <div class="card">
+        <img src="{{ url_for('static', filename='images/freestyle1.jpg') }}" alt="Freestyle 1">
+        <p>“Bars from the Basement”</p>
+      </div>
+      <div class="card">
+        <img src="{{ url_for('static', filename='images/freestyle2.jpg') }}" alt="Freestyle 2">
+        <p>“Reality Check Vol. 2”</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 📱 Footer -->
+  <footer>
+    <p>© 2025 Rhythm & Reality • Hosted by Bilal Zakaria Dewarder</p>
+  </footer>
+
 </body>
 </html>
