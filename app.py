@@ -1,6 +1,17 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect, url_for, flash, send_from_directory
+import os
 
 app = Flask(__name__)
+app.secret_key = 'your_secret_key'
+
+UPLOAD_FOLDER = 'static/uploads/music'
+ALLOWED_EXTENSIONS = {'mp3'}
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+
+os.makedirs(UPLOAD_FOLDER, exist_ok=True)
+
+def allowed_file(filename):
+    return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 @app.route('/')
 def home():
@@ -10,9 +21,36 @@ def home():
 def about():
     return render_template("about.html")
 
-@app.route('/music')
+@app.route('/music', methods=["GET"])
 def music():
-    return render_template("music.html")
+    files = os.listdir(app.config['UPLOAD_FOLDER'])
+    return render_template("music.html", files=files)
+
+@app.route("/upload-music", methods=["POST"])
+def upload_music():
+    if 'file' not in request.files:
+        flash('No file part in request')
+        return redirect(url_for('music'))
+
+    file = request.files['file']
+
+    if file.filename == '':
+        flash('No file selected')
+        return redirect(url_for('music'))
+
+    if file and allowed_file(file.filename):
+        filename = file.filename
+        filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+        file.save(filepath)
+        flash('File uploaded successfully!')
+    else:
+        flash('Invalid file type. Only .mp3 files are allowed.')
+
+    return redirect(url_for('music'))
+
+@app.route('/uploads/music/<filename>')
+def uploaded_music(filename):
+    return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
 
 if __name__ == '__main__':
     app.run(debug=True)
