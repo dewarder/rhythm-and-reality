@@ -5,48 +5,59 @@ body {
   color: #fff;
 }
 
-/* 🔲 Navbar */
+/* 🔲 Nav Bar */
 .navbar {
   background: #111;
+  padding: 15px 25px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 25px;
   position: sticky;
   top: 0;
   z-index: 1000;
 }
 
-.logo {
-  height: 50px;
-  max-width: 100%;
-}
-
 .navbar nav a {
   color: gold;
   margin-left: 20px;
-  font-size: 1.6rem;
+  font-weight: bold;
   text-decoration: none;
+  font-size: 1.1rem;
 }
 
-/* 🎧 Hero Section */
-.hero {
+.logo {
+  height: 50px;
+}
+
+/* 🎧 Hero */
+.hero-banner {
+  background-image: url('../static/images/hero.jpg'); /* Replace this with your own image */
+  background-size: cover;
+  background-position: center;
+  height: 400px;
+  position: relative;
+}
+
+.hero-overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+  height: 100%;
   display: flex;
-  flex-wrap: wrap;
-  padding: 40px;
-  background: #222;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .hero-text {
-  flex: 1;
-  padding-right: 20px;
+  text-align: center;
+  color: #fff;
 }
 
-.hero-media {
-  flex: 1;
-  max-width: 480px;
+.hero-text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
 }
 
 .btn {
@@ -54,50 +65,68 @@ body {
   background: gold;
   color: black;
   padding: 10px 20px;
-  margin-top: 20px;
   text-decoration: none;
+  margin-top: 15px;
   font-weight: bold;
+  border-radius: 5px;
 }
 
-/* 🧱 Grid */
-.content-grid {
-  padding: 40px;
+/* 🧱 Content Sections */
+.section {
+  padding: 40px 20px;
+  text-align: center;
 }
 
-.grid {
+.section.dark {
+  background-color: #111;
+}
+
+.card-row {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 20px;
+  margin-top: 20px;
 }
 
 .card {
-  background: #111;
-  padding: 15px;
-  width: 200px;
+  width: 180px;
+  background: #222;
   border-radius: 8px;
+  overflow: hidden;
   text-align: center;
 }
 
 .card img {
   width: 100%;
-  border-radius: 4px;
+  height: auto;
+  display: block;
 }
 
 /* 📱 Footer */
 footer {
   text-align: center;
   padding: 20px;
+  background: #111;
   color: #888;
 }
 
 /* 📱 Responsive */
 @media (max-width: 768px) {
-  .hero {
+  .card-row {
     flex-direction: column;
+    align-items: center;
   }
 
-  .navbar nav a {
-    font-size: 1.3rem;
-    margin-left: 10px;
+  .hero-text h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-banner {
+    height: 300px;
+  }
+
+  .logo {
+    height: 40px;
   }
 }
