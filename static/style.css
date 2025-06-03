@@ -7,7 +7,8 @@ body {
 
 /* 🔲 Nav Bar */
 .navbar {
-  background: #111;
+  background: url('/static/images/navbar-bg.jpg') no-repeat center;
+  background-size: cover;
   padding: 15px 25px;
   display: flex;
   justify-content: space-between;
@@ -15,8 +16,9 @@ body {
   position: sticky;
   top: 0;
   z-index: 1000;
+  height: 100px;
+  position: relative; /* added for overlay */
 }
-
 .navbar nav a {
   color: gold;
   margin-left: 20px;
@@ -24,7 +26,13 @@ body {
   text-decoration: none;
   font-size: 1.1rem;
 }
-
+.navbar::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5); /* adjust darkness here */
+  z-index: -1;
+}
 .logo {
   height: 50px;
 }
