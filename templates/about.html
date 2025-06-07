@@ -1,16 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>About - Rhythm & Reality</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-  <h1>About Rhythm & Reality</h1>
-  <p> Rhythm & Reality is a podcast that dives deep into the minds of underground artists, exploring the stories behind the music and the lives behind the lyrics. Hosted by Bilal Zakaria Dewarder, each episode blends raw conversation with creative expression—bringing you honest, unfiltered dialogue about art, struggle, ambition, and the culture that shapes it all.      </p>
   <nav>
     <a href="/">Home</a> |
     <a href="/about">About</a> |
     <a href="/music">Music</a>
   </nav>
+
+  <section class="about">
+    <img src="{{ url_for('static', filename='images/rhythm-logo.jpeg') }}" alt="Rhythm and Reality Logo" class="about-logo">
+    
+    <h1>About Rhythm & Reality</h1>
+    
+    <p>
+      Rhythm & Reality is a podcast that dives deep into the minds of underground artists, exploring the stories behind the music and the lives behind the lyrics. Hosted by Bilal Zakaria Dewarder, each episode blends raw conversation with creative expression—bringing you honest, unfiltered dialogue about art, struggle, ambition, and the culture that shapes it all.
+    </p>
+  </section>
 </body>
 </html>
