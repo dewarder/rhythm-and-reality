@@ -53,6 +53,26 @@ def upload_music():
 @app.route('/uploads/music/<filename>')
 def uploaded_music(filename):
     return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
+@app.route('/submit', methods=['GET', 'POST'])
+def submit():
+    if request.method == 'POST':
+        name = request.form['name']
+        email = request.form['email']
+        story = request.form['story']
+        links = request.form['links']
+        why = request.form['why']
 
+        # You could save this data to a file, database, or email it
+        print(f"New submission from {name}: {email}, {story}, {links}, {why}")
+
+        flash('Thank you for your submission!')
+        return redirect(url_for('thank_you', name=name))
+    
+    return render_template("submit.html")
+
+@app.route('/thank-you')
+def thank_you():
+    name = request.args.get('name', 'Artist')
+    return render_template("thankyou.html", name=name)
 if __name__ == '__main__':
     app.run(debug=True)
