@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head> 
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
   <meta charset="UTF-8">
   <title>Rhythm & Reality</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -33,18 +34,22 @@
 
   <!-- 🧱 Featured Episodes -->
   <section class="section">
-    <h2>🎧 Artist Spotlights & Real Stories</h2>
-<div class="card-row">
-  <div class="card">
-    <img src="{{ url_for('static', filename='images/episode1.jpg') }}" alt="Episode 1">
-    <p>Conversations that reveal the heart behind the music.</p>
-  </div>
-  <div class="card">
-    <img src="{{ url_for('static', filename='images/episode2.jpg') }}" alt="Episode 2">
-    <p>Struggles, growth, and raw emotions from underground voices.</p>
-  </div>
+  <h2>🎧 Artist Spotlights & Real Stories</h2>
+  <div class="card-row">
+    <div class="card">
+  <img src="{{ url_for('static', filename='images/real-bars-pierre.png') }}" alt="Real Bars, Real Life">
+  <h3>🎙️ Real Bars, Real Life</h3>
+  <p>Guest: Pierre-Stéphane</p>
+  <p>Stories, struggles, and the emotion behind the music.</p>
 </div>
-  </section>
+    <div class="card">
+      <img src="{{ url_for('static', filename='images/real-bars.png') }}" alt="Real Bars, Real Life">
+      <h3>🧠 Mental Health in the Studio</h3>
+      <p>Guest: alohprod</p>
+      <p>Behind-the-scenes of creativity and mental balance.</p>
+    </div>
+  </div>
+</section>
 
   <!-- 👥 Featured Guests -->
   <section class="section dark">

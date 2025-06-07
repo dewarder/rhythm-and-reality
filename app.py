@@ -17,11 +17,16 @@ def allowed_file(filename):
 
 @app.route('/')
 def home():
+    print("✅ Loading index.html...")  # <- This will show in your terminal
     return render_template("index.html")
 
 @app.route('/about')
 def about():
     return render_template("about.html")
+
+@app.route("/contact")
+def contact():
+    return render_template("contact.html")
 
 @app.route('/music', methods=["GET"])
 def music():
@@ -53,6 +58,7 @@ def upload_music():
 @app.route('/uploads/music/<filename>')
 def uploaded_music(filename):
     return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
+
 @app.route('/submit', methods=['GET', 'POST'])
 def submit():
     if request.method == 'POST':
@@ -74,5 +80,7 @@ def submit():
 def thank_you():
     name = request.args.get('name', 'Artist')
     return render_template("thankyou.html", name=name)
+
+# ✅ Only one app.run block
 if __name__ == '__main__':
     app.run(debug=True)
