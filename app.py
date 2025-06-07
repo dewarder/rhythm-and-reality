@@ -6,18 +6,22 @@ app.config['TEMPLATES_AUTO_RELOAD'] = True
 app.jinja_env.auto_reload = True
 app.secret_key = 'your_secret_key'
 
+# Configure upload folder for music
 UPLOAD_FOLDER = 'static/uploads/music'
 ALLOWED_EXTENSIONS = {'mp3'}
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
+# Create upload directory if it doesn't exist
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
+# Routes
+
 @app.route('/')
 def home():
-    print("✅ Loading index.html...")  # <- This will show in your terminal
+    print("✅ Loading index.html...")
     return render_template("index.html")
 
 @app.route('/about')
@@ -68,9 +72,7 @@ def submit():
         links = request.form['links']
         why = request.form['why']
 
-        # You could save this data to a file, database, or email it
         print(f"New submission from {name}: {email}, {story}, {links}, {why}")
-
         flash('Thank you for your submission!')
         return redirect(url_for('thank_you', name=name))
     
@@ -81,6 +83,6 @@ def thank_you():
     name = request.args.get('name', 'Artist')
     return render_template("thankyou.html", name=name)
 
-# ✅ Only one app.run block
+# ✅ Start the app
 if __name__ == '__main__':
     app.run(debug=True)
