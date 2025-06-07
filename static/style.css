@@ -1,8 +1,9 @@
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'Space Grotesk', Helvetica, Arial, sans-serif;
   background: #000;
-  color: #fff;
+  color: #f2f2f2;
+  line-height: 1.6;
 }
 
 /* 🔲 Nav Bar */
@@ -98,17 +99,41 @@ body {
 }
 
 .card {
-  width: 180px;
+  width: 280px;
   background: #222;
   border-radius: 8px;
   overflow: hidden;
   text-align: center;
+  padding-bottom: 1em;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card img {
   width: 100%;
   height: auto;
   display: block;
+  transition: transform 0.3s ease;
+}
+
+.card:hover img {
+  transform: scale(1.03);
+}
+
+.card h3 {
+  margin: 0.8em 0 0.3em;
+  color: #FFD700;
+  font-size: 1.2rem;
+}
+
+.card p {
+  margin: 0.2em 1em;
+  color: #ccc;
+  font-size: 0.95rem;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(255, 215, 0, 0.2);
 }
 
 /* 📱 Footer */
